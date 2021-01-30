@@ -100,9 +100,10 @@ textarea {
     color: #333;
     max-width: 100%;
     margin: auto;
-    font-size: 19px;
+    font-size: 17px;
+    line-height: 123%;
   
-    margin: 2%;
+    margin: 1.5%;
 
   
   }
@@ -122,6 +123,7 @@ textarea {
     flex-direction: column;
     align-items: stretch;
     justify-content: flex-start;
+    /* justify-content: flex-end; */
     width: 100%;
     /* pointer-events: none; */
 
@@ -131,14 +133,25 @@ textarea {
 
 .highlight {
 
-font-weight: 800;
-background-color: springgreen;
+font-weight: 700;
 border-radius: 6px;
-padding: .2em;
+padding: .08em;
+
+}
+
+.green {
+
+  background-color: springgreen;
 
 }
 
 
+.red {
+
+  background-color:   #ff3300;
+  color: white;
+  ;
+}
 
 .ban {
   /* width: 50%; */
@@ -146,6 +159,7 @@ padding: .2em;
 
   font-weight: 800;
   font-size: 3em;
+  padding-bottom: 1em;
 
 }
 
@@ -276,6 +290,17 @@ margin:auto;
   input[type=range]:focus::-ms-fill-upper {
     background: #0a0a0a;
   }
+
+
+
+  .slider {
+
+/* 
+    position: absolute;
+    bottom: 4%; */
+/* overflow: hidden; */
+
+  }
   /*TODO: Use one of the selectors from https://stackoverflow.com/a/20541859/7077589 and figure out
   how to remove the virtical space around the range input in IE*/
   @supports (-ms-ime-align:auto) {
@@ -300,7 +325,11 @@ margin:auto;
 
 
 
+.textSummary{
 
+
+  /* min-height: 60vh; */
+}
 
 
 

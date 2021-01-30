@@ -19,6 +19,10 @@ class App extends React.Component {
   render() {
     return (
       <div className="container">
+
+
+<TextSummary data={this.state} />
+
         <PfdBanner data={this.state} />
         <div className="pfdSizeContainer">
           <p className="pfdSize"> 💵 Smaller PFD </p>
@@ -27,7 +31,7 @@ class App extends React.Component {
         </div>
 
         <AmountSlider handler={this.handleChange} />
-        <TextSummary data={this.state} />
+
       </div> //app div
     );
   } //end of rendr
@@ -46,6 +50,7 @@ class AmountSlider extends React.Component {
         min="0"
         max="7000"
         //   value="10"
+        defaultValue="1000"
         className="slider"
         id="amountSlider"
         onChange={this.props.handler}
@@ -128,7 +133,7 @@ class TextSummary extends React.Component {
 const width = window.innerWidth;
 
 const scaleY = d3.scaleLinear()
-scaleY.range([0,100]).domain([0, 11000000000])
+scaleY.range([0,85]).domain([0, 11000000000])
 // 9 639 041 650.718876
 // console.log(scaleX(2000000000))
 
@@ -140,16 +145,16 @@ scaleY.range([0,100]).domain([0, 11000000000])
 
     return (
       <div>
-        <p>
+        <p className ="TextSummary">
           A PFD of{" "}
-          <span className="highlight">${parseInt(pfd).toLocaleString()} </span>
+          <span className="highlight green">${parseInt(pfd).toLocaleString()} </span>
           will requires spending{" "}
-          <span className="highlight">
+          <span className="highlight red">
             ${total_cost_of_pfds.toLocaleString()}{" "}
           </span>
           from savings accounts like the Alaska Permanent Fund. <br /> <br />
           Due to the lost earning power of those assets, it will cost Alaskans{" "}
-          <span className="highlight">
+          <span className="highlight red">
             ${annual_earnings.toLocaleString()}
           </span>{" "}
           in 2021.
@@ -158,7 +163,7 @@ scaleY.range([0,100]).domain([0, 11000000000])
         </p>
 
 
-        <svg width= {width-30} height ="100">
+        <svg width= {width-30} height ="90">
         {lost_earnings_array.map(function(d,i){
             return (<rect className="rect" x={i*30} y={5} width={(width-160)/10} height ={scaleY(d.money)} ></rect>)
 
