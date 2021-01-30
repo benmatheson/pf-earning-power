@@ -115,20 +115,22 @@ class TextSummary extends React.Component {
       const yearMoney = {
         pfd: pfd,
         year: i,
-        money: total_cost_of_pfds * (1 + annual_return) ** i,
+        money: total_cost_of_pfds * (1 + annual_return) ** i, //the compounded spend total
+        annual_earnings_lost: annual_earnings * (1 + annual_return) ** i, // the compouned  earnings. hm
       };
 
       lost_earnings_array.push(yearMoney);
     }
 
-    
+    console.log(lost_earnings_array)
 
 // ###################
 const width = window.innerWidth;
 
-
-
-
+const scaleY = d3.scaleLinear()
+scaleY.range([0,100]).domain([0, 11000000000])
+// 9 639 041 650.718876
+// console.log(scaleX(2000000000))
 
 
 
@@ -156,14 +158,14 @@ const width = window.innerWidth;
         </p>
 
 
-        {/* <svg width= {width-30} height ="100">
-        {lost_earnings_array.map(function(d){
-            return (<rect x={d} ></rect>)
+        <svg width= {width-30} height ="100">
+        {lost_earnings_array.map(function(d,i){
+            return (<rect className="rect" x={i*30} y={5} width={(width-160)/10} height ={scaleY(d.money)} ></rect>)
 
 
         })}
 
-        </svg> */}
+        </svg>
 
       </div>
     );
