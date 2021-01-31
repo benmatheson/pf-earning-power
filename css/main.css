@@ -291,6 +291,7 @@ height: 80vh;
     border-radius: 50px;
     cursor: pointer;
     -webkit-appearance: none;
+    transition: all .3s ease;
   }
   input[type=range]:focus::-webkit-slider-runnable-track {
     background: #0a0a0a;
