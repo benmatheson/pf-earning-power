@@ -161,7 +161,7 @@ padding: .07em;
 
   font-weight: 800;
   font-size: 3.2em;
-  /* padding-bottom: 1em; */
+  padding-bottom: 1em;
 
 }
 
@@ -173,7 +173,7 @@ padding: .07em;
   font-weight: 100;
   font-size: .8em;
   padding-bottom: 1em;
-  padding-top: 2em;
+  /* padding-top: 2em; */
   font-style: italic;
 
 }
