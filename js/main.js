@@ -233,7 +233,7 @@ scaleY.range([0,85]).domain([0, 1400000000])
           <span className="highlight red">
             {annual_earnings_format}
           </span>{" "}
-          in missed growth in 2021. With missed compounding, over 20 years, this would cost           <span className="highlight red">
+          in missed growth in 2021. Compounded over 20 years, this would cost           <span className="highlight red">
 {total_lost_earnings_format}</span>
         </p>
 
