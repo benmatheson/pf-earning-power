@@ -346,7 +346,15 @@ height: 80vh;
 
 
 
-  .slider {
+  input[type=range]::-webkit-slider-thumb:active {
+    margin-top: -24.8px;
+    width: 55px;
+    height: 55px;
+    border: 3px solid #000000;
+    border-radius: 70px;
+
+  }
+
 
 /* 
     position: absolute;
