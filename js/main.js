@@ -154,7 +154,7 @@ class TextSummary extends React.Component {
         pfd: pfd,
         year: i,
         money: total_cost_of_pfds * (1 + annual_return) ** i, //the compounded spend total
-        annual_earnings_lost: annual_earnings * (1 + annual_return) ** i, // the compouned  earnings. hm
+        annual_earnings_lost: annual_earnings * (1 + annual_return) ** (i-1), // the compouned  earnings. hm
       };
 
       lost_earnings_array.push(yearMoney);
