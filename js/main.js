@@ -24,7 +24,7 @@ class App extends React.Component {
 <TextSummary data={this.state} />
 
         <PfdBanner data={this.state} />
-        <PfdBannerLabel  />
+        {/* <PfdBannerLabel  /> */}
        
 
         <AmountSlider handler={this.handleChange} />
