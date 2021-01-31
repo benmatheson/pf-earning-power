@@ -101,7 +101,7 @@ textarea {
     max-width: 100%;
     margin: auto;
     font-size: 17px;
-    line-height: 123%;
+    line-height: 126%;
   
     margin: 1.5%;
 
@@ -199,6 +199,7 @@ padding: .07em;
 display: flex;
 flex-direction: row;
 justify-content: space-between;
+margin-bottom: 6%;
 
 }
 

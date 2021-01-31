@@ -129,7 +129,7 @@ class TextSummary extends React.Component {
   render() {
     // console.log("RENDINGRS TEXd")
     const pfd = this.props.data.pfd;
-    const total_cost_of_pfds = pfd * 700000;
+    const total_cost_of_pfds = pfd * 639247 ; //this is the 2018 total. 
     // console.log(total_cost_of_pfds)
     const annual_return = 0.07;
     const annual_return_full = 1.07;
@@ -155,6 +155,7 @@ class TextSummary extends React.Component {
         year: i,
         money: total_cost_of_pfds * (1 + annual_return) ** i, //the compounded spend total
         annual_earnings_lost: annual_earnings * (1 + annual_return) ** (i-1), // the compouned  earnings. hm
+        // annual_earnings_lost_1: total_cost_of_pfds * (1+annual_return) ** (i), // the compouned  earnings. hm
       };
 
       lost_earnings_array.push(yearMoney);
