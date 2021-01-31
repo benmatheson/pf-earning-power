@@ -116,6 +116,12 @@ textarea {
     cursor: default;
   } */
 
+.bold {
+font-weight: 600;
+font-style: italic;
+/* background-color  :whitesmoke; */
+
+}
 
 
    .container {
