@@ -221,7 +221,7 @@ scaleY.range([0,85]).domain([0, 1400000000])
     return (
       <div>
         <p className ="TextSummary">
-          A PFD of{" "}
+          An Alaska PFD of{" "}
           <span className="highlight green">${parseInt(pfd).toLocaleString()} </span>
           requires spending{" "}
           <span className="highlight red">
