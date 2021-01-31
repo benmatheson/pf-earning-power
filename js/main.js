@@ -24,14 +24,16 @@ class App extends React.Component {
 <TextSummary data={this.state} />
 
         <PfdBanner data={this.state} />
+        <PfdBannerLabel  />
+       
+
+        <AmountSlider handler={this.handleChange} />
+
         <div className="pfdSizeContainer">
           <p className="pfdSize"> 💵 Smaller PFD </p>
           {/* <p className="pfdSize"> ⟷</p> */}
           <p className="pfdSize"> 💰💸 🔥Bigger PFD </p>
         </div>
-
-        <AmountSlider handler={this.handleChange} />
-
       </div> //app div
     );
   } //end of rendr
@@ -62,12 +64,35 @@ class AmountSlider extends React.Component {
 class PfdBanner extends React.Component {
   render() {
     return (
+  
       <div className="ban">
         ${parseInt(this.props.data.pfd).toLocaleString()}
       </div>
+          
+  
     );
   }
 }
+
+
+
+class PfdBannerLabel extends React.Component {
+    render() {
+      return (
+    
+        <div className="lan">
+        PFD Size
+        </div>
+            
+    
+      );
+    }
+  }
+  
+
+
+
+
 
 
 class TextSummary extends React.Component {
@@ -113,9 +138,17 @@ class TextSummary extends React.Component {
 
     // console.log(total_cost_of_pfds*(1+annual_return)^3)
 
+
+
+
+
+
+
+
+
     const lost_earnings_array = [];
 
-    for (var i = 1; i <= 10; i++) {
+    for (var i = 1; i <= 20; i++) {
       // console.log(i)
       const yearMoney = {
         pfd: pfd,
@@ -129,11 +162,53 @@ class TextSummary extends React.Component {
 
     console.log(lost_earnings_array)
 
+
+const total_lost_earnings = Math.floor(lost_earnings_array.reduce(( total, curr)=>total+=curr.annual_earnings_lost,0))
+
+
+console.log(total_lost_earnings)
+
+
+
+
+// #########FoRMATTING
+
+
+var total_cost_of_pfds_format;
+
+total_cost_of_pfds <1000000000 ? total_cost_of_pfds_format = `$${Math.floor(total_cost_of_pfds/1000000)} million` : total_cost_of_pfds_format = `$${(total_cost_of_pfds/1000000000).toFixed(2)} billion`
+ console.log(total_cost_of_pfds_format)
+
+
+ var annual_earnings_format;
+ annual_earnings <1000000000 ? annual_earnings_format = `$${Math.floor(annual_earnings/1000000)} million` : annual_earnings_format = `$${(annual_earnings/1000000000).toFixed(2)} billion`
+
+ var total_lost_earnings_format;
+
+ total_lost_earnings <1000000000 ? total_lost_earnings_format = `$${Math.floor(total_lost_earnings/1000000)} million` : total_lost_earnings_format = `$${(total_lost_earnings/1000000000).toFixed(2)} billion`
+
+
+
+
+// #########FoRMATTING
+
+
+
 // ###################
+
+
 const width = window.innerWidth;
 
+
+
+var spacing; // this is the i * spacing
+var barWidth;
+
+width >=767 ? spacing = (width *.55)/20 : spacing  =  (width - 30) /20
+width >=767 ? barWidth = (width *.4)/20 : barWidth  =  (width - 50) /20
+
 const scaleY = d3.scaleLinear()
-scaleY.range([0,85]).domain([0, 11000000000])
+scaleY.range([0,85]).domain([0, 1400000000])
 // 9 639 041 650.718876
 // console.log(scaleX(2000000000))
 
@@ -148,24 +223,24 @@ scaleY.range([0,85]).domain([0, 11000000000])
         <p className ="TextSummary">
           A PFD of{" "}
           <span className="highlight green">${parseInt(pfd).toLocaleString()} </span>
-          will requires spending{" "}
+          requires spending{" "}
           <span className="highlight red">
-            ${total_cost_of_pfds.toLocaleString()}{" "}
+            {/* ${total_cost_of_pfds.toLocaleString()}{" "} */}
+            {total_cost_of_pfds_format}{" "}
           </span>
           from savings accounts like the Alaska Permanent Fund. <br /> <br />
-          Due to the lost earning power of those assets, it will cost Alaskans{" "}
+          Due to the lost earning power of those assets, that costs Alaskans{" "}
           <span className="highlight red">
-            ${annual_earnings.toLocaleString()}
+            {annual_earnings_format}
           </span>{" "}
-          in 2021.
-          <br /> <br /> And because the assets in the Permanent Fund compound,
-          this mo
+          in missed growth in 2021. With missed compounding, over 20 years, this would cost           <span className="highlight red">
+{total_lost_earnings_format}</span>
         </p>
 
 
         <svg width= {width-30} height ="90">
         {lost_earnings_array.map(function(d,i){
-            return (<rect className="rect" x={i*30} y={5} width={(width-160)/10} height ={scaleY(d.money)} ></rect>)
+            return (<rect className="rect" x={i*spacing} y={5} width={barWidth} height ={scaleY(d.annual_earnings_lost)} ></rect>)
 
 
         })}

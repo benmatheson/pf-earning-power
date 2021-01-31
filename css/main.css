@@ -127,6 +127,8 @@ textarea {
     width: 100%;
     /* pointer-events: none; */
 
+
+
     /* border: 2px red dashed; */
   }
 
@@ -135,7 +137,7 @@ textarea {
 
 font-weight: 700;
 border-radius: 6px;
-padding: .08em;
+padding: .07em;
 
 }
 
@@ -158,8 +160,21 @@ padding: .08em;
   margin: 0 auto;
 
   font-weight: 800;
-  font-size: 3em;
+  font-size: 3.2em;
+  /* padding-bottom: 1em; */
+
+}
+
+
+.lan {
+
+  margin: 0 auto;
+
+  font-weight: 100;
+  font-size: .8em;
   padding-bottom: 1em;
+  padding-top: 1em;
+  font-style: italic;
 
 }
 
@@ -188,15 +203,27 @@ justify-content: space-between;
   font-weight: 700;
   font-size: .7em;
 
+
 }
 
 
 @media only screen and (min-width: 767px) {
 
   .container {
-width: 70%;
+width: 60%;
 margin:auto;
 
+box-shadow:
+0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+0 6.7px 5.3px rgba(0, 0, 0, 0.048),
+0 12.5px 10px rgba(0, 0, 0, 0.06),
+0 22.3px 17.9px rgba(0, 0, 0, 0.072),
+0 41.8px 33.4px rgba(0, 0, 0, 0.086),
+0 100px 80px rgba(0, 0, 0, 0.12);
+
+border-radius: .3em;
+padding: 2%;
+margin-top:2%;
 
   }
 
@@ -204,7 +231,10 @@ margin:auto;
 
   .pfdSize {
     font-weight: 700;
-    font-size: 1em;
+    font-size: 1.2em;
+    border: solid 1px black;
+    padding: .5%;
+    border-radius: .2em;
   }
   
   
@@ -321,6 +351,7 @@ margin:auto;
 
 
     fill: #ff3300;
+    rx: 3;
   }
 
 
