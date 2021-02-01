@@ -27,9 +27,9 @@ class App extends React.Component {
         <AmountSlider handler={this.handleChange} />
 
         <div className="pfdSizeContainer">
-          <p className="pfdSize"> 💵 Smaller PFD </p>
+          <p className="pfdSize"> 💵 Smaller PFD  </p>
           {/* <p className="pfdSize"> ⟷</p> */}
-          <p className="pfdSize"> 💰💸 🔥Bigger PFD </p>
+          <p className="pfdSize">  💰💸 🔥Bigger PFD </p>
         </div>
       </div> //app div
     );
@@ -185,11 +185,11 @@ class TextSummary extends React.Component {
     var barWidth;
 
     width >= 767
-      ? (spacing = (width * 0.55) / 20)
-      : (spacing = (width - 30) / 20);
+      ? (spacing = (width * 0.46) / 20)
+      : (spacing = (width - 90) / 20);
     width >= 767
-      ? (barWidth = (width * 0.4) / 20)
-      : (barWidth = (width - 50) / 20);
+      ? (barWidth = (width * 0.39) / 20)
+      : (barWidth = (width - 120) / 20);
 
     const scaleY = d3.scaleLinear();
     scaleY.range([0, 85]).domain([0, 1400000000]);
@@ -208,7 +208,7 @@ console.log(ticks)
 console.log(ticks_array)
 
     {
-      /* <text x= "20" y= "10"  className = "busy_text bold" >Typical Tests Per Hour</text> */
+    //   /* <text x= "20" y= "10"  className = "busy_text bold" >Typical Tests Per Hour</text> */
     }
     {
       /* <g id={`_${this.props.data.location}`} ref = {this.svg_ref}>   </g> */
@@ -244,13 +244,13 @@ console.log(ticks_array)
           missed growth in 2021. Compounded over 20 years, this would cost{" "}
           <span className="highlight red">{total_lost_earnings_format}</span>
         </p>
-
+<div class = 'svg'>
         <svg width={width - 30} height="90">
           {lost_earnings_array.map(function (d, i) {
             return (
               <rect
                 className="rect"
-                x={i * spacing}
+                x={i * spacing+50}
                 y={5}
                 width={barWidth}
                 height={scaleY(d.annual_earnings_lost)}
@@ -262,15 +262,21 @@ console.log(ticks_array)
 
           {ticks_array.map(function (d, i) {
       return (
-        <text class="bold" fontSize={8} x={3} y={ scaleY(d)+10}>
+        <text class="bold" fontSize={8} x={39} y={ scaleY(d)+10}>
           {/* {formater(d)} */}
-          {`$${d/1000000} million`}
+          {`$${d/1000000} M`}
         </text>
       );
     })}
 
+<text x= "90" y= "56"  className = "plotLabel" >⭡ Lost Earnings per Year</text>
+
+
+
           </g>
         </svg>
+
+        </div>
       </div>
     );
   }
