@@ -258,7 +258,10 @@ padding: .07em;
   border: 1px solid blue;
 }
 
-.small {font-size: .6em;}
+.small {font-size: .6em;
+padding-top: 2%;
+text-align: center;
+font-style: italic;}
 
 .circle {
 
