@@ -22,7 +22,7 @@ class App extends React.Component {
         <TextSummary data={this.state} />
 
         <PfdBanner data={this.state} />
-        {/* <PfdBannerLabel /> */}
+        <PfdBannerLabel />
 
         <AmountSlider handler={this.handleChange} />
 
@@ -70,7 +70,7 @@ class PfdBanner extends React.Component {
 
 class PfdBannerLabel extends React.Component {
   render() {
-    return <div className="lan">PFD Size</div>;
+    return <div className="lan"><span className="circle">⭣</span>Choose a PFD Size</div>;
   }
 }
 

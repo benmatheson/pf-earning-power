@@ -210,6 +210,41 @@ padding: .07em;
 }
 
 
+
+@keyframes pfdGlow {
+  0% {
+     /* width: 44px;
+     height: 44px;
+     background: #ffffff;
+     border: 1px solid #000000; */
+     opacity: .99;
+     /* font-size:.5em; */
+ 
+ 
+   }
+   50% {    
+     
+    /* width: 76px;
+     height: 76px;
+     background: #ffffff;
+     border: 1px solid #a30a0a; */
+     opacity: 0;
+     /* font-size: 2em; */
+   
+   }
+
+   100% {
+    /* width: 44px;
+    height: 44px;
+    background: #ffffff;
+    border: 1px solid #000000; */
+    opacity: .9;
+    /* font-size:.5em; */
+
+
+  }
+  }
+
 .lan {
 
   margin: 0 auto;
@@ -217,11 +252,23 @@ padding: .07em;
   font-weight: 100;
   font-size: .8em;
   /* padding-bottom: 1em; */
-  padding-top: 2em;
+  margin-top: 2em;
   font-style: italic;
-
 }
 
+.circle {
+
+/* border-radius: 400%; */
+/* border: blue solid 2px; */
+animation: pfdGlow 2s infinite;
+color: blue;
+color: #ff3300;
+/* color: green; */
+font-style: normal;
+font-weight: 900;
+display: inline;
+font-size: 1.9em;
+}
 .left {
 
 
