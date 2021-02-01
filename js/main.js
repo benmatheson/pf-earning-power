@@ -242,8 +242,8 @@ console.log(ticks_array)
           from savings accounts like the Alaska Permanent Fund. <br /> <br />
           Due to the lost earning power of those assets, that costs Alaskans{" "}
           <span className="highlight red">{annual_earnings_format}</span> in
-          missed growth in 2021. Compounded over 20 years, this would cost{" "}
-          <span className="highlight red">{total_lost_earnings_format}</span>
+          missed growth per year. Compounded over 20 years, this amounts to{" "}
+          <span className="highlight red">{total_lost_earnings_format}</span> in lost earnings.
         </p>
 <div class = 'svg'>
         <svg width={width - 30} height="90">
