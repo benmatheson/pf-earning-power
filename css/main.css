@@ -251,12 +251,14 @@ padding: .07em;
   margin: 0 auto;
 
   font-weight: 100;
-  font-size: .7em;
+  /* font-size: .7em; */
   /* padding-bottom: 1em; */
   /* margin-top: 5em; */
   /* font-style: italic; */
   border: 1px solid blue;
 }
+
+.small {font-size: .8em;}
 
 .circle {
 
@@ -269,6 +271,7 @@ color: #ff3300;
 font-style: normal;
 /* font-weight: 900; */
 display: inline;
+font-size:1.2em;
 /* font-size: 1.9em; */
 }
 .left {

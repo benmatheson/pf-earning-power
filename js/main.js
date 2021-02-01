@@ -28,7 +28,7 @@ class App extends React.Component {
 
         <div className="pfdSizeContainer">
           <p className="pfdSize"> 💵 Smaller PFD  </p>
-          <p className="circle"> Choose  </p>
+          <p className="small"> <span className="circle">⭡</span>PFD Size  </p>
           {/* <p className="pfdSize"> ⟷</p> */}
           <p className="pfdSize">  💰💸 🔥Bigger PFD </p>
         </div>
