@@ -156,6 +156,26 @@ font-style: italic;
   }
 
 
+  @media only screen and (max-width: 767px ) and (min-height:736px) {
+    .container {
+      padding-top: 10%;   
+      /* padding-bottom: 80%;    */
+       /* margin-bottom: 10%; */
+
+    justify-content: space-around; 
+
+    }
+
+.pfdSizeContainer {
+
+  margin-bottom: 34%;
+}
+
+  }
+
+
+
+
 .highlight {
 
 font-weight: 700;
@@ -183,8 +203,9 @@ padding: .07em;
   margin: 0 auto;
 
   font-weight: 800;
-  font-size: 3.2em;
-  padding-bottom: 1em;
+  font-size: 3.4em;
+  padding-bottom: .5em;
+  padding-top: .2em;
 
 }
 
@@ -229,7 +250,8 @@ padding-bottom: 9%;
   font-weight: 700;
   font-size: .7em;
 background-color: white;
-border:1px black;
+border:1px solid black;
+padding: .1em;
 }
 
 
@@ -249,9 +271,10 @@ box-shadow:
 
 border-radius: .3em;
 padding: 3%;
- margin-top:4%;
+ margin-top:1%;
+
 /* margin-bottom:2%;  */
-height: 80vh;
+height: 90vh;
 /* justify-content: top; */
 
   }
