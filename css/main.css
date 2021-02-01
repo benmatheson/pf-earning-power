@@ -206,7 +206,7 @@ padding: .07em;
   font-size: 3.4em;
   padding-bottom: .5em;
   padding-top: .5em;
-  background-color: blue;
+  /* background-color: blue; */
 
 }
 
@@ -267,9 +267,9 @@ color: blue;
 color: #ff3300;
 /* color: green; */
 font-style: normal;
-font-weight: 900;
+/* font-weight: 900; */
 display: inline;
-font-size: 1.9em;
+/* font-size: 1.9em; */
 }
 .left {
 

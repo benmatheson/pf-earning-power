@@ -22,12 +22,13 @@ class App extends React.Component {
         <TextSummary data={this.state} />
 
         <PfdBanner data={this.state} />
-        <PfdBannerLabel />
+        {/* <PfdBannerLabel /> */}
 
         <AmountSlider handler={this.handleChange} />
 
         <div className="pfdSizeContainer">
           <p className="pfdSize"> 💵 Smaller PFD  </p>
+          <p className="circle"> Choose  </p>
           {/* <p className="pfdSize"> ⟷</p> */}
           <p className="pfdSize">  💰💸 🔥Bigger PFD </p>
         </div>
